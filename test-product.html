@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>product test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/simpleCart.min.js"></script>
+	<script src="js/config.js"></script>
+</head>
+<body>
+<div class="simpleCart_shelfItem">
+    <h2 class="item_name"> Awesome T-shirt </h2>
+	<p>
+    <input type="text" value="1" class="item_Quantity"><br>
+    <span class="item_price">35.99</span><br>
+		<a href="javascript:;" onclick="addToCart()"> Add to Cart </a>
+	</p>
+</div>
+<div class="simpleCart_shelfItem">
+    <h2 class="item_name"> Awesome Pants </h2>
+	<p>
+    <input type="text" value="1" class="item_Quantity"><br>
+    <span class="item_price">35.99</span><br>
+		<a onclick="addToCart()" href="javascript:;"> Add to Cart </a>
+	</p>
+</div>
+<div><a href="test-cart.html">Go to cart</a></div>
+<script>
+function addToCart() {
+	try {
+    // Create a new item object
+    var item = {};
+
+    // Retrieve the item information from HTML elements
+    item.name = document.querySelector('.item_name').innerHTML;
+    item.quantity = parseInt(document.querySelector('.item_Quantity').value);
+    item.price = parseFloat(document.querySelector('.item_price').innerHTML);
+
+    // Add the item to the cart
+    simpleCart.add(item);
+
+    // Save the cart data
+    simpleCart.save();
+    console.log("Item added to cart:", item);
+    } catch (error) {
+        console.error("An error occurred while adding the item to the cart:", error);
+    }
+}
+</script>
+</body>
+</html>

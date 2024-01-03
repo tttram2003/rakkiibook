@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="images/favicon.png" rel="shortcut icon">
+  <title>rakkiibookstore - Sách Ngoại Văn</title>
+
+  <!--====== Google Font ======-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+  <!--====== Vendor Css ======-->
+  <link rel="stylesheet" href="css/vendor.css">
+
+  <!--====== Utility-Spacing ======-->
+  <link rel="stylesheet" href="css/utility.css">
+
+  <!--====== App ======-->
+  <link rel="stylesheet" href="css/app.css">
+
+  <!--====== Cart ======-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/simpleCart.min.js"></script>
+  <script src="js/config.js"></script>
+</head>
+
+<body class="config" id="js-scrollspy-trigger">
+  <div class="preloader is-active">
+    <div class="preloader__wrap">
+      <div class="loader">
+        <div>
+          <ul>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z">
+                </path>
+              </svg>
+            </li>
+          </ul>
+        </div><span>Đang tải...</span>
+      </div>
+    </div>
+  </div>
+
+  <!--====== Main App ======-->
+  <div id="app">
+
+    <!--====== Main Header ======-->
+    <div id="navheader">
+      <script src="navheader.js"></script>
+    </div>
+    <!--====== End - Main Header ======-->
+
+
+    <!--====== App Content ======-->
+    <div class="app-content">
+
+      <!--====== Section 1 ======-->
+      <div class="u-s-p-y-90">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-12">
+              <div class="shop-w-master">
+                <h1 class="shop-w-master__heading u-s-m-b-30"><i class="fas fa-filter u-s-m-r-8"></i>
+
+                  <span>BỘ LỌC</span>
+                </h1>
+                <div class="shop-w-master__sidebar">
+                  <div class="u-s-m-b-30">
+                    <div class="shop-w shop-w--style">
+                      <div class="shop-w__intro-wrap">
+                        <h1 class="shop-w__h">DANH MỤC SẢN PHẨM</h1>
+
+                        <span class="fas fa-minus shop-w__toggle collapsed" data-target="#s-category"
+                          data-toggle="collapse" aria-expanded="false"></span>
+                      </div>
+                      <div class="shop-w__wrap collapse" id="s-category">
+                        <ul class="shop-w__category-list gl-scroll">
+                          <li class="has-list">
+
+                            <a href="#">Sách Tiếng Anh</a>
+
+                            <span class="category-list__text u-s-m-l-6">(23)</span>
+
+                            <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                            <ul style="display:block">
+                              <li class="has-list">
+
+                                <a href="#">Văn Hóa - Giải Trí</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Kinh Doanh - Hướng Dẫn</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Khoa Học - Thông Tin</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="has-list">
+
+                            <a href="#">Sách Tiếng Trung</a>
+
+                            <span class="category-list__text u-s-m-l-6">(23)</span>
+
+                            <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                            <ul style="display:block">
+                              <li class="has-list">
+
+                                <a href="#">Văn Hóa - Giải Trí</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Kinh Doanh - Hướng Dẫn</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Khoa Học - Thông Tin</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="has-list">
+
+                            <a href="#">Sách Tiếng Nhật</a>
+
+                            <span class="category-list__text u-s-m-l-6">(23)</span>
+
+                            <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                            <ul style="display:block">
+                              <li class="has-list">
+
+                                <a href="#">Văn Hóa - Giải Trí</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Kinh Doanh - Hướng Dẫn</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Khoa Học - Thông Tin</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="has-list">
+
+                            <a href="#">Sách Tiếng Hàn</a>
+
+                            <span class="category-list__text u-s-m-l-6">(23)</span>
+
+                            <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
+                            <ul style="display:block">
+                              <li class="has-list">
+
+                                <a href="#">Văn Hóa - Giải Trí</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Kinh Doanh - Hướng Dẫn</a>
+                              </li>
+                              <li class="has-list">
+
+                                <a href="#">Khoa Học - Thông Tin</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-s-m-b-30">
+                    <div class="shop-w shop-w--style">
+                      <div class="shop-w__intro-wrap">
+                        <h1 class="shop-w__h">ĐÁNH GIÁ</h1>
+
+                        <span class="fas fa-minus shop-w__toggle collapsed" data-target="#s-rating"
+                          data-toggle="collapse" aria-expanded="false"></span>
+                      </div>
+                      <div class="shop-w__wrap collapse" id="s-rating">
+                        <ul class="shop-w__list gl-scroll">
+                          <li>
+                            <div class="rating__check">
+
+                              <input type="checkbox">
+                              <div class="rating__check-star-wrap"><i class="fas fa-star"></i><i
+                                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                  class="fas fa-star"></i>
+                                <span>từ 5 sao</span>
+                              </div>
+                            </div>
+
+                            <span class="shop-w__total-text">(2)</span>
+                          </li>
+                          <li>
+                            <div class="rating__check">
+
+                              <input type="checkbox">
+                              <div class="rating__check-star-wrap"><i class="fas fa-star"></i><i
+                                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                  class="far fa-star"></i>
+
+                                <span>từ 4 sao</span>
+                              </div>
+                            </div>
+
+                            <span class="shop-w__total-text">(8)</span>
+                          </li>
+                          <li>
+                            <div class="rating__check">
+
+                              <input type="checkbox">
+                              <div class="rating__check-star-wrap"><i class="fas fa-star"></i><i
+                                  class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                                  class="far fa-star"></i>
+
+                                <span>từ 3 sao</span>
+                              </div>
+                            </div>
+
+                            <span class="shop-w__total-text">(10)</span>
+                          </li>
+                          <li>
+                            <div class="rating__check">
+
+                              <input type="checkbox">
+                              <div class="rating__check-star-wrap"><i class="fas fa-star"></i><i
+                                  class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                                  class="far fa-star"></i>
+
+                                <span>từ 2 sao</span>
+                              </div>
+                            </div>
+
+                            <span class="shop-w__total-text">(12)</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-s-m-b-30">
+                    <div class="shop-w shop-w--style">
+                      <div class="shop-w__intro-wrap">
+                        <h1 class="shop-w__h">GIAO HÀNG</h1>
+
+                        <span class="fas fa-minus shop-w__toggle collapsed" data-target="#s-shipping"
+                          data-toggle="collapse" aria-expanded="false"></span>
+                      </div>
+                      <div class="shop-w__wrap collapse" id="s-shipping">
+                        <ul class="shop-w__list gl-scroll">
+                          <li>
+
+                            <!--====== Check Box ======-->
+                            <div class="check-box">
+
+                              <input type="checkbox" id="free-shipping">
+                              <div class="check-box__state check-box__state--primary">
+
+                                <label class="check-box__label" for="free-shipping">Miễn Phí Giao Hàng</label>
+                              </div>
+                            </div>
+                            <!--====== End - Check Box ======-->
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-s-m-b-30">
+                    <div class="shop-w shop-w--style">
+                      <div class="shop-w__intro-wrap">
+                        <h1 class="shop-w__h">GIÁ</h1>
+
+                        <span class="fas fa-minus shop-w__toggle collapsed" data-target="#s-price"
+                          data-toggle="collapse" aria-expanded="false"></span>
+                      </div>
+                      <div class="shop-w__wrap collapse" id="s-price">
+                        <form class="shop-w__form-p">
+                          <div class="shop-w__form-p-wrap">
+                            <div>
+
+                              <label for="price-min"></label>
+
+                              <input class="input-text input-text--primary-style" type="text" id="price-min"
+                                placeholder="Thấp Nhất">
+                            </div>
+                            <div>
+
+                              <label for="price-max"></label>
+
+                              <input class="input-text input-text--primary-style" type="text" id="price-max"
+                                placeholder="Cao Nhất">
+                            </div>
+                            <div>
+
+                              <button class="btn btn--icon fas fa-angle-right btn--e-transparent-platinum-b-2"
+                                type="submit"></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-s-m-b-30">
+                    <div class="shop-w shop-w--style">
+                      <div class="shop-w__intro-wrap">
+                        <h1 class="shop-w__h">NHÀ CUNG CẤP</h1>
+
+                        <span class="fas fa-minus shop-w__toggle collapsed" data-target="#s-manufacturer"
+                          data-toggle="collapse" aria-expanded="false"></span>
+                      </div>
+                      <div class="shop-w__wrap collapse" id="s-manufacturer">
+                        <ul class="shop-w__list-2">
+                          <li>
+                            <div class="list__content">
+
+                              <input type="checkbox" checked>
+
+                              <span>Amazon</span>
+                            </div>
+
+                            <span class="shop-w__total-text">(23)</span>
+                          </li>
+                          <li>
+                            <div class="list__content">
+
+                              <input type="checkbox">
+
+                              <span>Barnes & Noble</span>
+                            </div>
+
+                            <span class="shop-w__total-text">(2)</span>
+                          </li>
+                          <li>
+                            <div class="list__content">
+
+                              <input type="checkbox">
+
+                              <span>Waterstones</span>
+                            </div>
+
+                            <span class="shop-w__total-text">(2)</span>
+                          </li>
+                          <li>
+                            <div class="list__content">
+
+                              <input type="checkbox">
+
+                              <span>Kinokuniya</span>
+                            </div>
+
+                            <span class="shop-w__total-text">(9)</span>
+                          </li>
+                          <li>
+                            <div class="list__content">
+
+                              <input type="checkbox">
+
+                              <span>Book Depository</span>
+                            </div>
+
+                            <span class="shop-w__total-text">(3)</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-12">
+              <div class="shop-p">
+                <div class="shop-p__toolbar u-s-m-b-30">
+                  <div class="shop-p__meta-wrap u-s-m-b-60">
+
+                    <span class="shop-p__meta-text-1">TÌM THẤY 18 KẾT QUẢ</span>
+                    <div class="shop-p__meta-text-2">
+
+                      <span>Các Từ Khóa Liên Quan:</span>
+
+                      <a class="gl-tag btn--e-brand-shadow" href="#">khoa học</a>
+
+                      <a class="gl-tag btn--e-brand-shadow" href="#">chữa lành</a>
+
+                      <a class="gl-tag btn--e-brand-shadow" href="#">từ điển</a>
+                    </div>
+                  </div>
+                  <div class="shop-p__tool-style">
+                    <div class="tool-style__group u-s-m-b-8">
+
+                      <span class="js-shop-grid-target is-active">Lưới</span>
+
+                      <span class="js-shop-list-target">Danh sách</span>
+                    </div>
+                    <form>
+                      <div class="tool-style__form-wrap">
+                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                            <option>Hiển Thị: 8</option>
+                            <option selected>Hiển Thị: 12</option>
+                            <option>Hiển Thị: 16</option>
+                            <option>Hiển Thị: 28</option>
+                          </select></div>
+                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                            <option selected>Sắp Xếp Theo: Mới Nhất</option>
+                            <option>Sắp Xếp Theo: Cũ Nhất</option>
+                            <option>Sắp Xếp Theo: Bán Chạy Nhất</option>
+                            <option>Sắp Xếp Theo: Đánh Giá Cao Nhất</option>
+                            <option>Sắp Xếp Theo: Giá Thấp Nhất</option>
+                            <option>Sắp Xếp Theo: Giá Cao Nhất</option>
+                          </select></div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="shop-p__collection">
+                  <div class="row is-grid-active" id="productgridlist">
+                    <span style="display:none;">Đang tải sản phẩm...</span>
+                  </div>
+                </div>
+                <div class="u-s-p-y-60">
+
+                  <!--====== Pagination ======-->
+                  <ul class="shop-p__pagination">
+                    <li class="is-active">
+
+                      <a href="product-list.html">1</a>
+                    </li>
+                    <li>
+
+                      <a href="product-list.html">2</a>
+                    </li>
+                    <li>
+
+                      <a href="product-list.html">3</a>
+                    </li>
+                    <li>
+
+                      <a href="product-list.html">4</a>
+                    </li>
+                    <li>
+
+                      <a class="fas fa-angle-right" href="product-list.html"></a>
+                    </li>
+                  </ul>
+                  <!--====== End - Pagination ======-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--====== End - Section 1 ======-->
+    </div>
+    <!--====== End - App Content ======-->
+
+
+    <!--====== Main Footer ======-->
+    <div id="navfooter">
+      <script src="navfooter.js"></script>
+    </div>
+
+    <!--====== Modal Section ======-->
+
+
+    <!--====== Add to Cart Modal ======-->
+    <div class="modal fade" id="add-to-cart">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-radius modal-shadow">
+
+          <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-6 col-md-12">
+                <div class="success u-s-m-b-30">
+                  <div class="success__text-wrap"><i class="fas fa-check"></i>
+                    <span>Sản phẩm đã được thêm vào giỏ hàng!</span>
+                  </div>
+                  <div class="success__info-wrap">
+                    <span class="success__name"></span>
+                    <span class="success__quantity"></span>
+                    <span class="success__price"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                <div class="s-option">
+                  <div class="s-option__link-box">
+                    <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">Xem Sản Phẩm Khác</a>
+                    <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">Đến Giỏ Hàng</a>
+                    <a class="s-option__link btn--e-brand-shadow" href="checkout.html">Thanh Toán</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--====== End - Add to Cart Modal ======-->
+    <!--====== End - Modal Section ======-->
+  </div>
+  <!--====== End - Main App ======-->
+
+  <!--====== Product Card Template ======-->
+  <template id="productCardTemplate">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="product-m simpleCart_shelfItem">
+        <div class="product-m__thumb">
+
+          <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+            <img class="aspect__img item_thumb" src="" alt=""></a>
+          </a>
+          <div class="product-m__quick-look">
+            <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip"
+              data-placement="top" title="Xem thử"></a>
+          </div>
+          <div class="product-m__add-cart">
+            <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart" onclick="addToCart()"
+              href="javascript:;">Thêm Vào Giỏ
+              Hàng</a>
+          </div>
+        </div>
+        <div class="product-m__content">
+          <div class="product-o__category">
+            <a href="product-list.html"></a>
+          </div>
+          <div class="product-m__name">
+            <a href="product-detail.html" class="item_name"></a>
+          </div>
+          <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+            <span class="product-m__review">(23)</span>
+          </div>
+          <span class="item_price" style="font-size:0; display:block; width:0; height:0;"></span>
+          <span class="item_Quantity" style="font-size:0; display:block; width:0; height:0;"></span>
+          <div class="product-o__price"></div>
+          <div class="product-m__hover">
+            <div class="product-m__preview-description"></div>
+            <div class="product-m__wishlist">
+              <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!--====== End - Product Card Template ======-->
+
+  <!--====== Cart Functions ======-->
+  <script src="js/cartfunc.js"></script>
+  <script>
+    // Create product cards
+    generateProductCards(xmlDoc, 10, "productgridlist");
+    // Show description
+    var productDescriptions = xmlDoc.getElementsByTagName("desc");
+    var descriptionElements = document.querySelectorAll(".product-m__preview-description");
+    for (var i = 0; i < descriptionElements.length; i++) {
+      var descriptionElement = descriptionElements[i];
+      var productDescription = productDescriptions[i].textContent;
+      var words = productDescription.split(" ");
+      var truncatedDescription = words.slice(0, 20).join(" ");
+      descriptionElement.textContent = truncatedDescription + "...";
+    }
+  </script>
+
+  <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+  <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+  <!--====== Vendor Js ======-->
+  <script src="js/vendor.js"></script>
+
+  <!--====== jQuery Shopnav plugin ======-->
+  <script src="js/jquery.shopnav.js"></script>
+
+  <!--====== App ======-->
+  <script src="js/app.js"></script>
+
+  <!--====== Noscript ======-->
+  <noscript>
+    <div class="app-setting">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="app-setting__wrap">
+              <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+
+              <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a
+                JavaScript-capable browser.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </noscript>
+
+
+
+
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: "/admin-front-end/stored/product.xml",
+        dataType: "xml",
+        success: function (xml) {
+          var productImagePositions = ['productImg6', 'productImg7'];
+          var i = 0;
+
+          $(xml).find('product').each(function () {
+            var productImg = $(this).find('productimg').text();
+            var productImagePath = "/admin-front-end/stored/" + productImg;
+            var productImageHTML = '<img src="' + productImagePath + '" alt="Product Image">';
+            $('#' + productImagePositions[i]).html(productImageHTML);
+            i++;
+
+            // Nếu đã đến vị trí cuối cùng trong mảng, quay lại vị trí đầu tiên
+            if (i >= productImagePositions.length) {
+              i = 0;
+            }
+          });
+        },
+        error: function () {
+          console.log('Error loading XML file');
+        }
+      });
+    });
+  </script> -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        type: "GET",
+        url: "/admin-front-end/stored/product.xml",
+        dataType: "xml",
+        success: function(xml) {
+          $(xml).find('product').each(function() {
+            var productID = $(this).find('productid').text();
+            var productImg = $(this).find('productimg').text();
+            var productName = $(this).find('productname').text();
+            var productPrice = $(this).find('price').text();
+            var productDesc = $(this).find('desc').text();
+
+            var productHTML = `
+              <div id="product${productID}">
+                <img src="${productImg}" alt="Product Image">
+                <h2>${productName}</h2>
+                <p>Price: ${productPrice}</p>
+                <p>${productDesc}</p>
+              </div>
+            `;
+
+            $('#product-list').append(productHTML);
+          });
+        },
+        error: function() {
+          console.log('Error loading XML file');
+        }
+      });
+    });
+  </script> -->
+</body>
+
+</html>

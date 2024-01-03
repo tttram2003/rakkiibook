@@ -1,0 +1,363 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--[if IE
+      ]><meta http-equiv="X-UA-Compatible" content="IE=edge"
+    /><![endif]-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Giỏ hàng" />
+    <meta name="author" content="Nhóm 6" />
+    <link href="images/favicon.png" rel="shortcut icon" />
+    <title>Giỏ hàng - rakkiibookstore</title>
+
+    <!--====== Google Font ======-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <!--====== Vendor Css ======-->
+    <link rel="stylesheet" href="css/vendor.css" />
+
+    <!--====== Utility-Spacing ======-->
+    <link rel="stylesheet" href="css/utility.css" />
+
+    <!--====== App ======-->
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!--====== Cart ======-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/simpleCart.min.js"></script>
+    <script src="js/config.js"></script>
+  </head>
+
+  <body class="config">
+    <div class="preloader is-active">
+      <div class="preloader__wrap">
+        <div class="loader">
+          <div>
+            <ul>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+            </ul>
+          </div>
+          <span>Đang tải...</span>
+        </div>
+      </div>
+    </div>
+
+    <!--====== Main App ======-->
+    <div id="app">
+      <!--====== Main Header ======-->
+      <div id="navheader">
+        <script src="navheader.js"></script>
+      </div>
+      <!--====== End - Main Header ======-->
+
+      <!--====== App Content ======-->
+      <div class="app-content">
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
+          <!--====== Section Content ======-->
+          <div class="section__content">
+            <div class="container">
+              <div class="breadcrumb">
+                <div class="breadcrumb__wrap">
+                  <ul class="breadcrumb__list">
+                    <li class="has-separator">
+                      <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="is-marked">
+                      <a href="cart.html">Giỏ hàng</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--====== End - Section 1 ======-->
+
+        <!--====== Section 2 ======-->
+        <div class="u-s-p-b-60">
+          <!--====== Section Intro ======-->
+          <div class="section__intro u-s-m-b-60">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="section__text-wrap">
+                    <h1 class="section__heading u-c-secondary">
+                      GIỎ HÀNG CỦA BẠN
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--====== End - Section Intro ======-->
+
+          <!--====== Section Content ======-->
+          <div class="section__content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 u-s-m-b-30">
+                  <div class="table-responsive simpleCart_items"></div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="route-box">
+                    <div class="route-box__g1">
+                      <a class="route-box__link" href="product-list.html"
+                        ><i class="fas fa-long-arrow-alt-left"></i>
+                        <span>Quay lại</span></a
+                      >
+                    </div>
+                    <div class="route-box__g2">
+                      <a
+                        class="route-box__link simpleCart_empty"
+                        href="javascript:;"
+                        ><i class="fas fa-trash"></i>
+                        <span>Xóa hết sản phẩm</span></a
+                      >
+                      <a class="route-box__link" href="cart.html"
+                        ><i class="fas fa-sync"></i> <span>Cập nhật</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--====== End - Section Content ======-->
+        </div>
+        <!--====== End - Section 2 ======-->
+
+        <!--====== Section 3 ======-->
+        <div class="u-s-p-b-60">
+          <!--====== Section Content ======-->
+          <div class="section__content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 u-s-m-b-30">
+                  <form class="f-cart">
+                    <div class="row f-cart__flex-end">
+                      <!-- app.css 2956 -->
+                      <div class="col-lg-4 col-md-4 u-s-m-b-30">
+                        <div class="u-s-m-b-30">
+                          <table class="f-cart__table">
+                            <tbody>
+                              <tr>
+                                <td>TỔNG</td>
+                                <td class="simpleCart_grandTotal"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <button class="btn btn--e-brand-b-2" type="button">
+                          <a
+                            href="javascript:;"
+                            class="simpleCart_checkout"
+                            style="color: #fff"
+                            >Thanh toán</a
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--====== End - Section Content ======-->
+        </div>
+        <!--====== End - Section 3 ======-->
+      </div>
+      <!--====== End - App Content ======-->
+
+      <!--====== Main Footer ======-->
+      <div id="navfooter">
+        <script src="navfooter.js"></script>
+      </div>
+      <!--====== End - Main Footer ======-->
+    </div>
+    <!--====== End - Main App ======-->
+    <template>
+      <tr>
+        <td>
+          <div class="table-p__box">
+            <div class="table-p__img-wrap">
+              <img
+                class="u-img-fluid"
+                src="images/product/electronic/product3.jpg"
+                alt=""
+              />
+            </div>
+            <div class="table-p__info">
+              <span class="table-p__name">
+                <a href="product-detail.html"
+                  >Yellow Wireless Headphone</a
+                ></span
+              >
+
+              <span class="table-p__category">
+                <a href="shop-side-version-2.html">Electronics</a></span
+              >
+              <ul class="table-p__variant-list">
+                <li>
+                  <span>Size: 22</span>
+                </li>
+                <li>
+                  <span>Color: Red</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span class="table-p__price">$125.00</span>
+        </td>
+        <td>
+          <div class="table-p__input-counter-wrap">
+            <!--====== Input Counter ======-->
+            <div class="input-counter">
+              <span class="input-counter__minus fas fa-minus"></span>
+
+              <input
+                class="input-counter__text input-counter--text-primary-style"
+                type="text"
+                value="1"
+                data-min="1"
+                data-max="1000"
+              />
+
+              <span class="input-counter__plus fas fa-plus"></span>
+            </div>
+            <!--====== End - Input Counter ======-->
+          </div>
+        </td>
+        <td>
+          <div class="table-p__del-wrap">
+            <a class="far fa-trash-alt table-p__delete-link" href="#"></a>
+          </div>
+        </td>
+      </tr>
+    </template>
+
+    <script>
+      $(function () {
+        simpleCart({
+          cartColumns: [
+            { attr: "name", label: "Tên sản phẩm" },
+            {
+              view: function (item, column) {
+                return (
+                  "<div class='product-resized'><img src='" +
+                  item.get("image") +
+                  "'></div>"
+                );
+              },
+            },
+            { attr: "price", label: "Giá", view: "currency" },
+            { view: "decrement", text: " ", label: false },
+            { attr: "quantity", label: "Số lượng" },
+            { view: "increment", text: " ", label: false },
+            { attr: "total", label: "Tổng", view: "currency" },
+            { view: "remove", text: " ", label: false },
+          ],
+          cartStyle: "table",
+        });
+      });
+      simpleCart.load();
+    </script>
+
+    <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("send", "pageview");
+    </script>
+    <script
+      src="https://www.google-analytics.com/analytics.js"
+      async
+      defer
+    ></script>
+
+    <!--====== Vendor Js ======-->
+    <script src="js/vendor.js"></script>
+
+    <!--====== jQuery Shopnav plugin ======-->
+    <script src="js/jquery.shopnav.js"></script>
+
+    <!--====== App ======-->
+    <script src="js/app.js"></script>
+
+    <!--====== Noscript ======-->
+    <noscript>
+      <div class="app-setting">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="app-setting__wrap">
+                <h1 class="app-setting__h1">
+                  JavaScript is disabled in your browser.
+                </h1>
+
+                <span class="app-setting__text"
+                  >Please enable JavaScript in your browser or upgrade to a
+                  JavaScript-capable browser.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </noscript>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Information</title>
+</head>
+<body>
+    <h1>Order Information</h1>
+    <div id="order-details"></div>
+
+    <script>
+        // Fetch the XML file
+        fetch('order (copy).xml')
+            .then(response => response.text())
+            .then(xmlString => {
+                // Parse the XML content
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+                // Extract the order information
+                const cusname = xmlDoc.querySelector('cusname').textContent;
+                const email = xmlDoc.querySelector('email').textContent;
+                const phone = xmlDoc.querySelector('phone').textContent;
+                const address = xmlDoc.querySelector('address').textContent;
+
+                // Display the order information in the HTML
+                const orderDetailsElement = document.getElementById('order-details');
+                orderDetailsElement.innerHTML = `
+                    <p><strong>Customer Name:</strong> ${cusname}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Address:</strong> ${address}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing XML:', error);
+            });
+    </script>
+</body>
+</html>

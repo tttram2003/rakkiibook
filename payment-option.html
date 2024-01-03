@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Phương thức thanh toán">
+  <meta name="author" content="Nhóm 6">
+  <link href="images/favicon.png" rel="shortcut icon">
+  <title>Payment Option | rakkiibookstore</title>
+
+  <!--====== Google Font ======-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+
+  <!--====== Vendor Css ======-->
+  <link rel="stylesheet" href="css/vendor.css">
+
+  <!--====== Utility-Spacing ======-->
+  <link rel="stylesheet" href="css/utility.css">
+
+  <!--====== App ======-->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+  <body class="config">
+  <div class="preloader is-active">
+    <div class="preloader__wrap">
+      <div class="loader">
+        <div>
+          <ul>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+            <li>
+              <svg fill="currentColor" viewBox="0 0 90 120">
+                <path
+                  d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                ></path>
+              </svg>
+            </li>
+          </ul>
+        </div>
+        <span>Đang tải...</span>
+      </div>
+    </div>
+  </div>
+
+  <!--====== Main App ======-->
+  <div id="app">
+
+    <!--====== Main Header ======-->
+    <div id="navheader">
+      <script src="navheader.js"></script>
+    </div>
+    <!--====== End - Main Header ======-->
+
+
+    <!--====== App Content ======-->
+    <div class="app-content">
+
+      <!--====== Section 1 ======-->
+      <div class="u-s-p-y-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+          <div class="container">
+            <div class="breadcrumb">
+              <div class="breadcrumb__wrap">
+                <ul class="breadcrumb__list">
+                  <li class="has-separator">
+
+                    <a href="index.html">Trang chủ</a>
+                  </li>
+                  <li class="has-separator">
+
+                    <a href="">Thông tin tài khoản</a>
+                  </li>
+                  <li class="is-marked">
+
+                    <a href="payment-option.html">Phương thức thanh toán</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--====== End - Section 1 ======-->
+
+
+      <!--====== Section 2 ======-->
+      <div class="u-s-p-b-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+          <div class="dash">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-md-12">
+
+                  <!--====== Dashboard Features ======-->
+                  <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
+                    <div class="dash__pad-1">
+
+                      <span class="dash__text u-s-m-b-16">Hello, John Doe</span>
+                      <ul class="dash__f-list">
+                        <!--<li>
+
+                          <a href="dashboard.html">Manage My Account</a>
+                        </li>-->
+                        <li>
+
+                          <a href="account-info.html">Hồ sơ của tôi</a>
+                        </li>
+                        <li>
+
+                          <a href="edit-profile.html">Chỉnh sửa hồ sơ</a>
+                        </li>
+                        <li>
+
+                          <a href="">Mã giảm giá</a>
+                        </li>
+                        <li>
+
+                          <a href="">Điểm thưởng</a>
+                        </li>
+                        <!--<li>
+
+                          <a href="dash-address-book.html">Address Book</a>
+                        </li>
+                        <li>
+
+                          <a href="dash-track-order.html">Track Order</a>
+                        </li>-->
+                        <li>
+
+                          <a href="">Đơn hàng</a>
+                        </li>
+                        <li>
+
+                          <a class="dash-active" href="payment-option.html">Phương thức thanh toán</a>
+                        </li>
+                        <!--<li>
+
+                          <a href="dash-cancellation.html">My Returns & Cancellations</a>
+                        </li>-->
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
+                    <div class="dash__pad-1">
+                      <ul class="dash__w-list">
+                        <li>
+                          <div class="dash__w-wrap">
+
+                            <span class="dash__w-icon dash__w-icon-style-1"><i
+                                class="fas fa-cart-arrow-down"></i></span>
+
+                            <span class="dash__w-text">4</span>
+
+                            <span class="dash__w-name">Orders Placed</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="dash__w-wrap">
+
+                            <span class="dash__w-icon dash__w-icon-style-2"><i class="fas fa-times"></i></span>
+
+                            <span class="dash__w-text">0</span>
+
+                            <span class="dash__w-name">Cancel Orders</span>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="dash__w-wrap">
+
+                            <span class="dash__w-icon dash__w-icon-style-3"><i class="far fa-heart"></i></span>
+
+                            <span class="dash__w-text">0</span>
+
+                            <span class="dash__w-name">Wishlist</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--====== End - Dashboard Features ======-->
+                </div>
+                <div class="col-lg-9 col-md-12">
+                  <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white">
+                    <div class="dash__pad-2">
+                      <h1 class="dash__h1 u-s-m-b-14">Phương thức thanh toán</h1>
+
+                      <!--<span class="dash__text">No payment options</span>-->
+                    </div>
+
+                    <!--<h1 class="checkout-f__h1">Phương thức thanh toán</h1>-->
+                    <div class="o-summary__section u-s-m-b-30">
+                      <div class="o-summary__box">
+                        <form class="checkout-f__payment">
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="cash-on-delivery" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="cash-on-delivery">
+                                  <img src="images/cod.png" alt="Icon" class="icon" style="width: 30px; height: 30px;">
+                                  Thanh toán tiền mặt khi nhận hàng - COD</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+                          </div>
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="momo-payment" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="momo-payment">
+                                  <img src="images/momo.png" alt="Icon" class="icon" style="width: 30px; height: 30px;">
+                                  Thanh toán bằng ví MoMo</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+                          </div>
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="zalo-payment" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="zalo-payment">
+                                  <img src="images/zalopay.png" alt="Icon" class="icon"
+                                    style="width: 30px; height: 27px;">
+                                  Thanh toán bằng ví ZaloPay</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+                          </div>
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="qrvnpay" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="qrvnpay">
+                                  <img src="images/vnpay.png" alt="Icon" class="icon"
+                                    style="width: 35px; height: 20px;">
+                                  Thanh toán bằng VNPAY</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+                          </div>
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="pay-with-card" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="pay-with-card">
+                                  <img src="images/thenoidia.jpg" alt="Icon" class="icon"
+                                    style="width: 25px; height: 21px;"> &nbsp;
+                                  Thẻ ATM nội địa/Internet Banking</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+                          </div>
+                          <div class="u-s-m-b-20">
+
+                            <!--====== Radio Box ======-->
+                            <div class="radio-box">
+
+                              <input type="radio" id="credit-debit" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="credit-debit">
+                                  <img src="images/thequocte.jpg" alt="Icon" class="icon"
+                                    style="width: 30px; height: 29px;">
+                                  Thanh toán bằng thẻ quốc tế Visa, Mastercard, JCB</label>
+                              </div>
+                            </div>
+
+                            <!--
+                    <div class="o-summary__section u-s-m-b-30">
+                      <div class="o-summary__box">
+                        <h1 class="checkout-f__h1">PAYMENT INFORMATION</h1>
+                        <form class="checkout-f__payment">
+                          <div class="u-s-m-b-10">
+
+                            <!--====== Radio Box ======-->
+                            <!--<div class="radio-box">
+
+                              <input type="radio" id="cash-on-delivery" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="cash-on-delivery">Cash on Delivery</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+
+                            <!--<span class="gl-text u-s-m-t-6">Pay Upon Cash on delivery. (This service is only available
+                              for some countries)</span>
+                          </div>
+                          <div class="u-s-m-b-10">
+
+                            <!--====== Radio Box ======-->
+                            <!--<div class="radio-box">
+
+                              <input type="radio" id="direct-bank-transfer" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="direct-bank-transfer">Direct Bank Transfer</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+
+                            <!--<span class="gl-text u-s-m-t-6">Make your payment directly into our bank account. Please use
+                              your Order ID as the payment reference. Your order will not be shipped until the funds
+                              have cleared in our account.</span>
+                          </div>
+                          <div class="u-s-m-b-10">
+
+                            <!--====== Radio Box ======-->
+                            <!--<div class="radio-box">
+
+                              <input type="radio" id="pay-with-check" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="pay-with-check">Pay With Check</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+
+                            <!--<span class="gl-text u-s-m-t-6">Please send a check to Store Name, Store Street, Store Town,
+                              Store State / County, Store Postcode.</span>
+                          </div>
+                          <div class="u-s-m-b-10">
+
+                            <!--====== Radio Box ======-->
+                            <!--<div class="radio-box">
+
+                              <input type="radio" id="pay-with-card" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="pay-with-card">Pay With Credit / Debit Card</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+
+                            <!--<span class="gl-text u-s-m-t-6">International Credit Cards must be eligible for use within
+                              the United States.</span>
+                          </div>
+                          <div class="u-s-m-b-10">
+
+                            <!--====== Radio Box ======-->
+                            <!--<div class="radio-box">
+
+                              <input type="radio" id="pay-pal" name="payment">
+                              <div class="radio-box__state radio-box__state--primary">
+
+                                <label class="radio-box__label" for="pay-pal">Pay Pal</label>
+                              </div>
+                            </div>
+                            <!--====== End - Radio Box ======-->
+
+                            <!--<span class="gl-text u-s-m-t-6">When you click "Place Order" below we'll take you to
+                              Paypal's site to set up your billing information.</span>
+                          </div>
+                          <div class="u-s-m-b-15">
+
+                            <!--====== Check Box ======-->
+                            <!--<div class="check-box">
+
+                              <input type="checkbox" id="term-and-condition">
+                              <div class="check-box__state check-box__state--primary">
+
+                                <label class="check-box__label" for="term-and-condition">I consent to the</label>
+                              </div>
+                            </div>
+                            <!--====== End - Check Box ======-->
+                            <!--</div>
+                      </div>
+                    </div>-->
+                          </div><br>
+                          <div class="u-s-m-b-20">
+                            <a class="dash__custom-link btn--e-transparent-brand-b-2" href="index.html">Trở về</a>
+                            &nbsp;
+                            <a class="dash__custom-link btn--e-brand-b-2" href="cart.html">Tiếp tục mua hàng</a>
+                          </div>
+                      </div>
+                    </div>
+                    <!--====== End - Section Content ======-->
+                  </div>
+                  <!--====== End - Section 2 ======-->
+                </div>
+                <!--====== End - App Content ======-->
+
+
+                <!--====== Main Footer ======-->
+                <div id="navfooter">
+                  <script src="navfooter.js"></script>
+                </div>
+                <!--====== End - Main Footer ======-->
+              </div>
+              <!--====== End - Main App ======-->
+
+
+              <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
+              <script>
+                window.ga = function () {
+                  ga.q.push(arguments)
+                };
+                ga.q = [];
+                ga.l = +new Date;
+                ga('create', 'UA-XXXXX-Y', 'auto');
+                ga('send', 'pageview')
+              </script>
+              <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+              <!--====== Vendor Js ======-->
+              <script src="js/vendor.js"></script>
+
+              <!--====== jQuery Shopnav plugin ======-->
+              <script src="js/jquery.shopnav.js"></script>
+
+              <!--====== App ======-->
+              <script src="js/app.js"></script>
+
+              <!--====== Noscript ======-->
+              <noscript>
+                <div class="app-setting">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="app-setting__wrap">
+                          <h1 class="app-setting__h1">JavaScript is disabled in your browser.</h1>
+
+                          <span class="app-setting__text">Please enable JavaScript in your browser or upgrade to a
+                            JavaScript-capable browser.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </noscript>
+</body>
+
+</html>
