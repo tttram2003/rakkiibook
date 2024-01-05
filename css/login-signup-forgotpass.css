@@ -194,6 +194,9 @@ section .content .form .input-form p a{
     section .content {
         width: 100%;
     }
+    section .content .form {
+        width: 100%;
+    }
 }
 
 
