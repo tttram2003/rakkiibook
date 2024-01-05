@@ -187,6 +187,14 @@ section .content .form .input-form p a{
         font-weight: 500;
     }
 } */
+@media screen and (max-width: 768px) {
+    section .logo {
+        display: none;
+    }
+    section .content {
+        width: 100%;
+    }
+}
 
 
 
