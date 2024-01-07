@@ -9,7 +9,7 @@
     <meta name="description" content="Chỉnh sửa hồ sơ" />
     <meta name="author" content="Nhóm 6" />
     <link href="images/favicon.png" rel="shortcut icon" />
-    <title>Edit Profile | rakkiibookstore</title>
+    <title>Chỉnh sửa hồ sơ | rakkiibookstore</title>
 
     <!--====== Google Font ======-->
     <link
@@ -130,12 +130,10 @@
                       class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30"
                     >
                       <div class="dash__pad-1">
-                        <span class="dash__text u-s-m-b-16">Xin chào,...</span>
+                        <span class="dash__text u-s-m-b-16" id="name"
+                          >Xin chào,...</span
+                        >
                         <ul class="dash__f-list">
-                          <!--<li>
-
-                          <a href="dashboard.html">Manage My Account</a>
-                        </li>-->
                           <li>
                             <a href="account-info.html">Hồ sơ của tôi</a>
                           </li>
@@ -150,14 +148,6 @@
                           <li>
                             <a href="">Điểm thưởng</a>
                           </li>
-                          <!--<li>
-
-                          <a href="dash-address-book.html">Address Book</a>
-                        </li>
-                        <li>
-
-                          <a href="dash-track-order.html">Track Order</a>
-                        </li>-->
                           <li>
                             <a href="">Đơn hàng</a>
                           </li>
@@ -166,10 +156,6 @@
                               >Phương thức thanh toán</a
                             >
                           </li>
-                          <!--<li>
-
-                          <a href="dash-cancellation.html">My Returns & Cancellations</a>
-                        </li>-->
                         </ul>
                       </div>
                     </div>
@@ -184,9 +170,9 @@
                                 ><i class="fas fa-cart-arrow-down"></i
                               ></span>
 
-                              <span class="dash__w-text">4</span>
+                              <span class="dash__w-text">0</span>
 
-                              <span class="dash__w-name">Orders Placed</span>
+                              <span class="dash__w-name">Đơn hàng đã đặt</span>
                             </div>
                           </li>
                           <li>
@@ -197,7 +183,7 @@
 
                               <span class="dash__w-text">0</span>
 
-                              <span class="dash__w-name">Cancel Orders</span>
+                              <span class="dash__w-name">Đơn hàng đã hủy</span>
                             </div>
                           </li>
                           <li>
@@ -208,7 +194,9 @@
 
                               <span class="dash__w-text">0</span>
 
-                              <span class="dash__w-name">Wishlist</span>
+                              <span class="dash__w-name"
+                                >Danh sách yêu thích</span
+                              >
                             </div>
                           </li>
                         </ul>
@@ -223,7 +211,6 @@
                       <div class="dash__pad-2">
                         <h1 class="dash__h1 u-s-m-b-14">Hồ sơ của tôi</h1>
 
-                        <!--<span class="dash__text u-s-m-b-30">Looks like you haven't update your profile</span>-->
                         <span class="dash__text u-s-m-b-30"
                           >Quản lý thông tin hồ sơ để bảo mật tài khoản.</span
                         >
@@ -231,7 +218,7 @@
                           class="dash__link dash__link--secondary u-s-m-b-30"
                         >
                           <a data-modal="modal" data-modal-id="#dash-newsletter"
-                            >Subscribe Newsletter</a
+                            >Theo dõi bản tin</a
                           >
                         </div>
                         <div class="row">
@@ -247,7 +234,7 @@
                                     class="input-text input-text--primary-style"
                                     type="text"
                                     id="reg-fname"
-                                    placeholder="Last name"
+                                    placeholder="Họ của bạn"
                                   />
                                 </div>
                                 <div class="u-s-m-b-30">
@@ -259,21 +246,21 @@
                                     class="input-text input-text--primary-style"
                                     type="text"
                                     id="reg-lname"
-                                    placeholder="First name"
+                                    placeholder="Tên của bạn"
                                   />
                                 </div>
                               </div>
                               <div class="gl-inline">
                                 <div class="u-s-m-b-30">
                                   <label class="gl-label" for="reg-email"
-                                    >E-MAIL</label
+                                    >E-MAIL (*)</label
                                   >
 
                                   <input
                                     class="input-text input-text--primary-style"
                                     type="text"
                                     id="reg-email"
-                                    placeholder="Your email"
+                                    placeholder="abc@gmail.com"
                                   />
                                 </div>
                                 <div class="u-s-m-b-30">
@@ -285,7 +272,7 @@
                                     class="input-text input-text--primary-style"
                                     type="text"
                                     id="reg-phone"
-                                    placeholder="Phone number"
+                                    placeholder="Gồm 10 số"
                                   />
                                 </div>
                               </div>
@@ -300,10 +287,6 @@
                                       id="dayOfBirth"
                                     >
                                       <option selected>Ngày</option>
-                                      <!--<option value="male">January</option>
-                                    <option value="male">February</option>
-                                    <option value="male">March</option>
-                                    <option value="male">April</option>-->
                                       <script>
                                         for (let day = 1; day <= 31; day++) {
                                           document.write(
@@ -316,10 +299,6 @@
                                       id="monthOfBirth"
                                     >
                                       <option selected>Tháng</option>
-                                      <!--<option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>-->
                                       <script>
                                         for (
                                           let month = 1;
@@ -336,14 +315,10 @@
                                       id="yearOfBirth"
                                     >
                                       <option selected>Năm</option>
-                                      <!--<option value="1991">1991</option>
-                                    <option value="1992">1992</option>
-                                    <option value="1993">1993</option>
-                                    <option value="1994">1994</option>-->
                                       <script>
                                         for (
                                           let year = 1990;
-                                          year <= 2023;
+                                          year <= 2024;
                                           year++
                                         ) {
                                           document.write(
@@ -441,6 +416,9 @@
                                 );
                                 localStorage.setItem("gender", gender);
 
+                                // Hiển thị thông báo thành công
+                                alert("Thông tin đã được lưu thành công!");
+
                                 // Chuyển đến trang HTML hồ sơ
                                 window.location.href = "account-info.html";
                               }
@@ -460,6 +438,35 @@
                               var yearOfBirth =
                                 localStorage.getItem("yearOfBirth");
                               var gender = localStorage.getItem("gender");
+
+                              // Gán giá trị firstName vào trường input
+                              var firstNameInput = (document.getElementById(
+                                "reg-fname",
+                              ).value = firstName);
+                              var lastNameInput = (document.getElementById(
+                                "reg-lname",
+                              ).value = lastName);
+                              var emailInput = (document.getElementById(
+                                "reg-email",
+                              ).value = email);
+                              var phoneNumberInput = (document.getElementById(
+                                "reg-phone",
+                              ).value = phoneNumber);
+                              var dayOfBirthInput = (document.getElementById(
+                                "dayOfBirth",
+                              ).value = dayOfBirth);
+                              var monthOfBirthInput = (document.getElementById(
+                                "monthOfBirth",
+                              ).value = monthOfBirth);
+                              var yearOfBirthInput = (document.getElementById(
+                                "yearOfBirth",
+                              ).value = yearOfBirth);
+                              var genderInput = (document.getElementById(
+                                "gender",
+                              ).value = gender);
+                              var addressInput = (document.getElementById(
+                                "reg-address",
+                              ).value = address);
 
                               // Gộp ngày, tháng và năm sinh lại và định dạng thành dd/mm/yyyy
                               var birthday =
@@ -522,6 +529,11 @@
                                   return false;
                                 }
 
+                                if (emailValue === "") {
+                                  alert("Vui lòng nhập EMAIL của bạn!");
+                                  return false;
+                                }
+
                                 if (emailValue !== "") {
                                   // Kiểm tra định dạng email
                                   var emailRegex =
@@ -544,7 +556,7 @@
                                   var phoneRegex = /^\d{10}$/;
                                   if (!phoneRegex.test(phoneValue)) {
                                     alert(
-                                      "Vui lòng nhập một số điện thoại hợp lệ (10 chữ số)!",
+                                      "Vui lòng nhập một số điện thoại hợp lệ (10 số)!",
                                     );
                                     return false;
                                   }
@@ -593,6 +605,41 @@
         <script src="navfooter.js"></script>
       </div>
       <!--====== End - Main Footer ======-->
+      <!--====== Unsubscribe or Subscribe Newsletter ======-->
+      <div class="modal fade" id="dash-newsletter">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content modal--shadow">
+            <div class="modal-body">
+              <form class="d-modal__form">
+                <div class="u-s-m-b-15">
+                  <h1 class="gl-modal-h1">Theo dõi bản tin</h1>
+
+                  <span class="gl-modal-text">Tôi đã đọc và hiểu</span>
+
+                  <a class="d_modal__link" href="dash-my-profile.html"
+                    >rakkiibookstore</a
+                  >
+                </div>
+                <div class="gl-modal-btn-group">
+                  <button class="btn btn--e-brand-b-2" type="submit">
+                    Đăng ký
+                  </button>
+
+                  <button
+                    class="btn btn--e-grey-b-2"
+                    type="button"
+                    data-dismiss="modal"
+                  >
+                    Hủy
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--====== Unsubscribe or Subscribe Newsletter ======-->
     </div>
     <!--====== End - Main App ======-->
 
