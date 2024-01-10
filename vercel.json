@@ -1,5 +1,0 @@
-{
-  "routes": [
-    { "src": "/sign-up", "dest": "/sign-up" }
-  ]
-}
