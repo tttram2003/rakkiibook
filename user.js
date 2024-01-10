@@ -6,21 +6,16 @@
 
 // app.use(bodyParser.urlencoded({ extended: true }));
 var express = require('express');
-// var cors = require('cors');
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var xml2js = require('xml2js');
 var fs = require('fs');
 var app = express();
 
-// app.use(cors({
-//   origin: 'https://rakkiibookstore.vercel.app',
-//   credentials: true,
-// }));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors({
+  origin: 'https://rakkiibookstore.vercel.app',
+  credentials: true,
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
