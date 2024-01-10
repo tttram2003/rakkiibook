@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "user.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": 
+    {
+      "src": "/sign-up",
+      "methods": ["POST"],
+      "dest": "user.js"
+    }
+  ]
+}
