@@ -83,6 +83,11 @@
       </div>
     </div>
   </div>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
 
   <!--====== Main App ======-->
   <div id="app">
@@ -293,10 +298,12 @@
                     </div>
                   <div class="hidden">
 
-                    <label for="hidden">SẢN PHẨM</label>
+                    <label for="ho">SẢN PHẨM *</label>
 
                     <input type="text" id="hidden" data-bill="" name="hidden">
                   </div>
+                  <table class="table-responsive simpleCart_items">
+                  </table>
                     <br><br>
 
                     <script type="module">
@@ -584,75 +591,73 @@
 
             <!--====== App ======-->
             <script src="js/app.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var products = [];
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                var products = [];
 
-        var observer = new MutationObserver(function(mutationsList) {
-          mutationsList.forEach(function(mutation) {
-            var addedNodes = Array.from(mutation.addedNodes);
-            var tableFound = addedNodes.some(function(node) {
-              return node.nodeName === 'TABLE';
-            });
+                var observer = new MutationObserver(function (mutationsList) {
+                  mutationsList.forEach(function (mutation) {
+                    var addedNodes = Array.from(mutation.addedNodes);
+                    var tableFound = addedNodes.some(function (node) {
+                      return node.nodeName === 'TABLE';
+                    });
 
-            if (tableFound) {
-              var rows = document.querySelectorAll('.itemRow');
+                    if (tableFound) {
+                      var rows = document.querySelectorAll('.itemRow');
 
-              rows.forEach(function(row) {
-                var productName = row.querySelector('.item-name').textContent;
-                var unitPrice = parseFloat(row.querySelector('.item-price').textContent.replace(/[^0-9.-]+/g, ''));
-                var quantity = parseInt(row.querySelector('.item-quantity').textContent);
+                      rows.forEach(function (row) {
+                        var productName = row.querySelector('.item-name').textContent;
+                        var unitPrice = parseFloat(row.querySelector('.item-price').textContent.replace(/[^0-9.-]+/g, ''));
+                        var quantity = parseInt(row.querySelector('.item-quantity').textContent);
 
-              var existingProduct = products.find(function(product) {
-                  return (
-                    product['productname'] === productName &&
-                    product['productprice'] === unitPrice &&
-                    product['quantity'] === quantity
-                  );
-                });
+                        var existingProduct = products.find(function (product) {
+                          return (
+                            product['productname'] === productName &&
+                            product['productprice'] === unitPrice &&
+                            product['quantity'] === quantity
+                          );
+                        });
 
-                // Add the product only if it doesn't exist in the array
-                if (!existingProduct) {
-                  products.push({
-                    productname: productName,
-                    productprice: unitPrice,
-                    quantity: quantity
+                        // Add the product only if it doesn't exist in the array
+                        if (!existingProduct) {
+                          products.push({
+                            productname: productName,
+                            productprice: unitPrice,
+                            quantity: quantity
+                          });
+                        }
+                      });
+
+                      setTimeout(function () {
+                        var productsString = JSON.stringify(products);
+                        var xmlString = '';
+
+                        products.forEach(function (product) {
+                          xmlString += '<item>';
+                          xmlString += '<productname>' + product['productname'] + '</productname>';
+                          xmlString += '<productprice>' + product['productprice'] + '</productprice>';
+                          xmlString += '<quantity>' + product['quantity'] + '</quantity>';
+                          xmlString += '</item>';
+                        });
+
+
+                        console.log('XML String:', xmlString);
+                        console.log(products)
+                        console.log('Products String:', productsString); // Display the string representation of the products array in the browser console
+                        var hiddenDiv = document.querySelector('.hidden');
+                        hiddenDiv.innerHTML = '<label for="ho">SẢN PHẨM *</label><input type="text" id="hidden" data-bill="" name="hidden" value="' + xmlString + '">';
+                      }, 0);
+
+                      // Disconnect the observer once the items have been processed
+                      observer.disconnect();
+                    }
                   });
-                }
-              });
-
-              setTimeout(function() {
-                var productsString = JSON.stringify(products);
-                var xmlString = '';
-
-                products.forEach(function(product) {
-                  xmlString += '<item>';
-                  xmlString += '<productname>' + product['productname'] + '</productname>';
-                  xmlString += '<productprice>' + product['productprice'] + '</productprice>';
-                  xmlString += '<quantity>' + product['quantity'] + '</quantity>';
-                  xmlString += '</item>';
                 });
-                
 
-                console.log('XML String:', xmlString);
-                console.log(products)
-                console.log('Products String:', productsString); // Display the string representation of the products array in the browser console
-                var hiddenDiv = document.querySelector('.hidden');
-                var hiddenDiv = document.querySelector('.hidden');
-                var encodedProductsString = encodeURIComponent(productsString);
-                hiddenDiv.innerHTML = '<label for="ho">SẢN PHẨM *</label><input type="text" id="hidden" data-bill="" name="hidden" value=' + encodedProductsString + '">';
-              }, 0);
-              
-              // Disconnect the observer once the items have been processed
-              observer.disconnect();
-            }
-          });
-        });
-
-        // Start observing changes in the DOM
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
+                // Start observing changes in the DOM
+                observer.observe(document.body, { childList: true, subtree: true });
+              });
+            </script>
     
 
             <!--====== Noscript ======-->
