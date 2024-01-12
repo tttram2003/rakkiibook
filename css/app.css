@@ -157,6 +157,10 @@ iframe[src*="soundcloud"] {
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 Box Module
 --------------------------------------------------------------*/
@@ -8888,7 +8892,8 @@ table .item-decrement a:before {
   position: relative;
 }
 
-.loader:before, .loader:after {
+.loader:before,
+.loader:after {
   --r: -6deg;
   content: "";
   position: absolute;
@@ -9000,11 +9005,13 @@ table .item-decrement a:before {
     opacity: 1;
   }
 
-  35%, 100% {
+  35%,
+  100% {
     opacity: 0;
   }
 
-  50%, 100% {
+  50%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -9019,11 +9026,13 @@ table .item-decrement a:before {
     opacity: 1;
   }
 
-  50%, 100% {
+  50%,
+  100% {
     opacity: 0;
   }
 
-  65%, 100% {
+  65%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -9038,11 +9047,13 @@ table .item-decrement a:before {
     opacity: 1;
   }
 
-  65%, 100% {
+  65%,
+  100% {
     opacity: 0;
   }
 
-  80%, 100% {
+  80%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -9057,39 +9068,45 @@ table .item-decrement a:before {
     opacity: 1;
   }
 
-  80%, 100% {
+  80%,
+  100% {
     opacity: 0;
   }
 
-  95%, 100% {
+  95%,
+  100% {
     transform: rotateY(0deg);
   }
 }
+
 /* End Loader */
 /* index category */
 .category-index {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    transition: all 0.6s linear;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: all 0.6s linear;
 }
+
 .aspect-index {
-    position: absolute;
-    height: auto;
-    max-width: 600px;
-    max-height: 240px;
-    object-fit: contain;
+  position: absolute;
+  height: auto;
+  max-width: 600px;
+  max-height: 240px;
+  object-fit: contain;
 }
+
 .category-index-o {
-    position: relative;
-    border: 3px solid #f5f5f5;
-    border-radius: 50%;
-    overflow: hidden;
+  position: relative;
+  border: 3px solid #f5f5f5;
+  border-radius: 50%;
+  overflow: hidden;
 }
+
 .category-index-button {
-    box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.2);
-    font-size: 13px;
-    padding: 2px 14px;
-    border-radius: 20px;
-    font-weight: 600;
-    display: inline-block;
+  box-shadow: 0 3px 7px 2px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  padding: 2px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: inline-block;
 }
