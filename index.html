@@ -7,6 +7,9 @@
     <meta name="description" content="Chúng tôi tự hào mang đến cho bạn một trải nghiệm mua sắm sách thuận tiện và thú vị.">
     <meta name="author" content="Nhóm 6">
     <link href="images/favicon.png" rel="shortcut icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/simpleCart.min.js"></script>
+	<script src="js/config.js"></script>
     <title>rakkiibookstore - Thế giới sách trực tuyến</title>
 
     <!--====== Google Font ======-->
@@ -246,13 +249,9 @@
 
                                     <!--====== Tab 1 ======-->
                                     <div class="tab-pane" id="e-l-p">
-                                        <div class="slider-fouc">
-                                            <div class="owl-carousel tab-slider">
-                                                <div class="owl-stage-outer">
-                                                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2070px;" id="productcarousel">
-                                                    <span style="display:none;">Đang tải sản phẩm...</span>
-                                                    </div>
-                                                </div>
+                                        <div class="container">
+                                            <div class="row" id="productcarousel">
+                                                <span style="display:none;">Đang tải sản phẩm...</span>
                                             </div>
                                         </div>
                                     </div>
@@ -261,13 +260,9 @@
 
                                     <!--====== Tab 2 ======-->
                                     <div class="tab-pane fade show active" id="e-b-s">
-                                        <div class="slider-fouc">
-                                            <div class="owl-carousel tab-slider">
-                                                <div class="owl-stage-outer">
-                                                    <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2070px;" id="productcarousel2">
-                                                    <span style="display:none;">Đang tải sản phẩm...</span>
-                                                    </div>
-                                                </div>
+                                        <div class="container">
+                                            <div class="row" id="productcarousel2">
+                                                <span style="display:none;">Đang tải sản phẩm...</span>
                                             </div>
                                         </div>
                                     </div>
@@ -357,78 +352,83 @@
 
         <!--====== Add to Cart Modal ======-->
         <div class="modal fade" id="add-to-cart">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-radius modal-shadow">
-
-          <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-lg-6 col-md-12">
-                <div class="success u-s-m-b-30">
-                  <div class="success__text-wrap"><i class="fas fa-check"></i>
-                    <span>Sản phẩm đã được thêm vào giỏ hàng!</span>
-                  </div>
-                  <div class="success__info-wrap">
-                    <span class="success__name"></span>
-                    <span class="success__quantity"></span>
-                    <span class="success__price"></span>
-                  </div>
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-radius modal-shadow">
+                    <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="success u-s-m-b-30">
+                                    <div class="success__text-wrap"><i class="fas fa-check"></i>
+                                        <span>Sản phẩm đã được thêm vào giỏ hàng!</span>
+                                    </div>
+                                    <div class="success__info-wrap">
+                                        <span class="success__name"></span>
+                                        <span class="success__quantity"></span>
+                                        <span class="success__price"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="s-option">
+                                    <div class="s-option__link-box">
+                                        <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">Xem Sản Phẩm Khác</a>
+                                        <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">Đến Giỏ Hàng</a>
+                                        <a class="s-option__link btn--e-brand-shadow" href="checkout.html">Thanh Toán</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div class="s-option">
-                  <div class="s-option__link-box">
-                    <a class="s-option__link btn--e-white-brand-shadow" data-dismiss="modal">Xem Sản Phẩm Khác</a>
-                    <a class="s-option__link btn--e-white-brand-shadow" href="cart.html">Đến Giỏ Hàng</a>
-                    <a class="s-option__link btn--e-brand-shadow" href="checkout.html">Thanh Toán</a>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
         <!--====== End - Add to Cart Modal ======-->
 
         <!--====== End - Modal Section ======-->
     </div>
     <!--====== End - Main App ======-->
-<template id="productCardTemplate">
+    <template id="productCardTemplate">
     <div class="owl-item active" style="width:345px;">
         <div class="u-s-m-b-30 simpleCart_shelfItem">
         <div class="product-o product-o--hover-on">
-                                        <div class="product-o__wrap">
-
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
-
-                                                <img class="aspect__img item_thumb" src="" alt=""></a>
-                                            <div class="product-o__action-wrap">
-                                                <ul class="product-o__action-list">
-                                                    <li>
-                                                        <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem thử"><i class="fas fa-search-plus"></i></a></li>
-                                                    <li>
-                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng" onclick="addToCart()" href="javascript:;"><i class="fas fa-plus-circle"></i></a></li>
-                                                    <li>
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào wishlist"><i class="fas fa-heart"></i></a></li>
-                                                    <li>
-                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email cho tôi khi giá giảm"><i class="fas fa-envelope"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <span class="product-o__category">
-                                            <a href="product-list.html"></a></span>
-                                        <span class="product-o__name">
-                                            <a href="product-detail.html" class="item_name"></a></span>
-                                        <div class="product-o__rating gl-rating-style"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                                            <span class="product-o__review">(25)</span></div>
-                                        <span class="item_price" style="font-size:0; display:block; width:0; height:0;"></span>
-<span class="item_Quantity" style="font-size:0; display:block; width:0; height:0;">1</span><span class="product-o__price"></span>
-                                    </div>
-    </div>
+            <div class="product-o__wrap">
+                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                    <img class="aspect__img item_thumb" src="" alt=""></a>
+                <div class="product-o__action-wrap">
+                    <ul class="product-o__action-list">
+                        <li>
+                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Xem thử"><i class="fas fa-search-plus"></i></a></li>
+                        <li>
+                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Thêm vào giỏ hàng" onclick="addToCart()" href="javascript:;"><i class="fas fa-plus-circle"></i></a></li>
+                        <li>
+                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Thêm vào wishlist"><i class="fas fa-heart"></i></a></li>
+                        <li>
+                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email cho tôi khi giá giảm"><i class="fas fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <span class="product-o__category">
+                <a href="product-list.html"></a></span>
+            <span class="product-o__name">
+                <a href="product-detail.html" class="item_name"></a></span>
+            <div class="product-o__rating gl-rating-style"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                <span class="product-o__review">(25)</span></div>
+            <span class="item_price" style="font-size:0; display:block; width:0; height:0;"></span><span class="item_Quantity" style="font-size:0; display:block; width:0; height:0;">1</span>
+            <span class="product-o__price"></span>
+        </div>
+        </div>
     </div>
 </template>
 
+    <!--====== Cart Functions =====-->
+    <script src="js/cartfunc.js"></script>
+    <script>
+        // Create product cards
+        generateProductCardsR("productCardTemplate",xmlDoc,5,"productcarousel");
+        generateProductCardsR("productCardTemplate",xmlDoc,5,"productcarousel2");
+        generateProductCardsR("productCardTemplate",xmlDoc,3,"productFlashSale");
+    </script>
     <!--====== Google Analytics: change UA-XXXXX-Y to be your site's ID ======-->
     <script>
         window.ga = function() {
@@ -449,16 +449,6 @@
 
     <!--====== App ======-->
     <script src="js/app.js"></script>
-
-    <!--====== Cart Functions =====-->
-    <script src="js/simpleCart.min.js"></script>
-    <script src="js/cartfunc.js"></script>
-    <script>
-        // Create product cards
-        generateProductCardsR("productCardTemplate",xmlDoc,5,"productcarousel");
-        generateProductCardsR("productCardTemplate",xmlDoc,5,"productcarousel2");
-        generateProductCardsR("productCardTemplate",xmlDoc,3,"productFlashSale");
-    </script>
 
     <!--====== Noscript ======-->
     <noscript>
